@@ -1,0 +1,65 @@
+body {
+  text-align: center;
+  background: orange;
+}
+
+button {
+  margin-top: 2em;
+}
+
+.shape-container {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.circle {
+  height: 400px;
+  width: 400px;
+  border: 2px solid red;
+  position: relative;
+}
+
+.myMotionA {
+  animation: moveItA 1s linear infinite 0.5s alternate;
+  cursor: pointer;
+}
+
+.myMotionB {
+  animation: moveItB 1s linear infinite 0.5s alternate;
+  cursor: pointer;
+}
+
+.myMotionA:hover,
+.myMotionB:hover {
+  animation-play-state: paused;
+}
+
+@keyframes moveItA {
+  from {
+    left: 0;
+    border-radius: 0;
+  }
+  to {
+    left: 300px;
+    border-radius: 50%;
+    border: 25px dashed green;
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes moveItB {
+  from {
+    right: 0;
+    top: 0;
+    border-radius: 0;
+  }
+  to {
+    right: 300px;
+    top: 300px;
+    border-radius: 50%;
+    border: 25px dashed pink;
+    transform: rotate(180deg);
+  }
+}
